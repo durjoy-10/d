@@ -7,27 +7,27 @@ P, Q = symbols('P Q')
 
 # --- Define expressions with their own statements ---
 expressions = {
-    "a) It is raining outside if and only if it is a cloudy day(Raining ↔ Cloudy)": {
+    "a) It is raining outside if and only if it is a cloudy day(Raining <=> Cloudy)": {
         "expr": Equivalent(P, Q),
         "statements": {P: "It is raining", Q: "It is cloudy"}
     },
-    "b) If you got 80+ in the exam then you can earn A+ (Exam ≥80 → Earn A+)": {
+    "b) If you got 80+ in the exam then you can earn A+ (Exam >= 80 -> Earn A+)": {
         "expr": Implies(P, Q),
         "statements": {P: "Exam ≥ 80", Q: "Earn an A+ grade"}
     },
-    "c) Take either Advil or Tylenol(Advil ⊕ Tylenol)": {
+    "c) Take either Advil or Tylenol(Advil XOR Tylenol)": {
         "expr": Xor(P, Q),
         "statements": {P: "Took Advil", Q: "Took Tylenol"}
     },
-    "d) She studied hard or she is extriemly bright(Studied ∨ Bright)": {
+    "d) She studied hard or she is extriemly bright(Studied V Bright)": {
         "expr": Or(P, Q),
         "statements": {P: "Studied hard", Q: "Bright student"}
     },
-    "e) I am a rock and i am a island(Rock ∧ Island)": {
+    "e) I am a rock and i am a island(Rock ^ Island)": {
         "expr": And(P, Q),
         "statements": {P: "There is a rock", Q: "There is an island"}
     },
-    "f) It is raining and I am not palying(Raining ∧ Not play)": {
+    "f) It is raining and I am not palying(Raining ^ Not play)": {
         "expr": And(P, Not(Q)),
         "statements": {P: "It is raining", Q: "I will play football"}
     }
