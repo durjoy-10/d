@@ -27,7 +27,7 @@ expressions = {
         "expr": And(P, Q),
         "statements": {P: "There is a rock", Q: "There is an island"}
     },
-    "f) It is raining and I am not palying(Raining ∧ Not play)": {
+    "f) It is raining and I will not paly football(Raining ∧ Not play)": {
         "expr": And(P, Not(Q)),
         "statements": {P: "It is raining", Q: "I will play football"}
     }
@@ -36,10 +36,10 @@ expressions = {
 # --- Print truth tables ---
 for label, data in expressions.items():
     expr = data["expr"]
-    stmts = data["statements"]
+    statements = data["statements"]
 
-    left_name = stmts[P]
-    right_name = stmts[Q]
+    left_name = statements[P]
+    right_name = statements[Q]
 
     print("\nTruth Table for:", label)
     print(f"{left_name:20} | {right_name:20} | Result")

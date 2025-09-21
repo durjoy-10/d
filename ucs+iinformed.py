@@ -23,13 +23,13 @@ def greedy_best_first(graph, start, goal, h):
     pq = [(h[start], start, [start])]
     visited = set()
     while pq:
-        _, node, path = heapq.heappop(pq)
+        cost, node, path = heapq.heappop(pq)
         if node == goal:
             return path
         if node in visited:
             continue
         visited.add(node)
-        for neigh, _ in graph[node]:
+        for neigh, cost in graph[node]:
             if neigh not in visited:
                 heapq.heappush(pq, (h[neigh], neigh, path + [neigh]))
     return None
